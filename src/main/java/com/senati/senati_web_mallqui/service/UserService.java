@@ -13,15 +13,16 @@ import java.util.List;
 public class UserService {
     @Autowired
     UserRepository userRepository;
-    public List <User> getAllUsers(){
+
+    public List<User> getAllUsers() {
         return userRepository.findAll();
     }
-}
 
-    public ResponseEntity<User> newUser (User user) {
-        return new ResponseEntity<>(userRepository.save(user). HttpStatus.OK);
+    public ResponseEntity<User> newUser(User user) {
+        return new ResponseEntity<>(userRepository.save(user).HttpStatus.OK);
     }
 
     public ResponseEntity<User> newUser(@RequestBody User user) {
         return userService.newUser(user);
     }
+}
