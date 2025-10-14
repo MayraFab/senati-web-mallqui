@@ -25,4 +25,14 @@ public class UserService {
     public ResponseEntity<User> newUser(@RequestBody User user) {
         return userService.newUser(user);
     }
+
+    public User actualizarUsuario(Long id, User user) {
+        user.setId(id);
+        return userRepository.save(user);
+    }
+
+    public void eliminarUsuario(Long id) {
+        userRepository.deleteById(id);
+    }
+
 }
