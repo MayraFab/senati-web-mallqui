@@ -5,6 +5,13 @@ public class Response {
     private String status;
     private String message;
 
+    
+
+    public Response() {
+        this.code = 200;
+        this.status = "success";
+    }
+
     public String getStatus() {
         return status;
     }

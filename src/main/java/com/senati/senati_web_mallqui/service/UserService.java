@@ -39,8 +39,6 @@ public class UserService {
             Optional<User> optionalUser = userRepository.findById(id);
             Response response = new Response();
             if (optionalUser.isPresent()) {
-                response.setCode(200);
-                response.setStatus("success");
                 response.setMessage("El usuario con id: "+ id + "se ha limpiado correctamente");
                 return response;
             }
